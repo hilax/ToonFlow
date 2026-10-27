@@ -2,7 +2,8 @@ node_modules/
 dist/
 /build/
 /data/
-/work/
+/work/*
+!/work/localServer.ps1
 /backup/
 .playwright-mcp/
 playwright-report/

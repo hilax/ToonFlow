@@ -275,6 +275,20 @@ Toonflow 采用 MIT 开源许可，可自行部署。第三方模型服务的 AP
 
 ## 4. 🚀 下载并安装
 
+### Windows 源码本地运行
+
+安装项目指定的 Bun 1.3.14 后，在仓库根目录的 PowerShell 中执行：
+
+```powershell
+bun install --frozen-lockfile
+bun run build:server
+.\startLocal.cmd
+```
+
+首次构建完成后，双击 `startLocal.cmd` 即可在后台启动服务并打开 `http://127.0.0.1:3000`；双击 `stopLocal.cmd` 停止服务。启动脚本优先使用 `work/runtime/bun-windows-x64/bun.exe`，没有本地便携运行时则使用 PATH 中的 `bun.exe`。依赖安装和构建需要单独执行，启动脚本不会自动安装或构建。
+
+进入页面后选择 `data/workspaces/myProject` 工作目录，并在“设置”中配置模型。配置、密钥、项目和生成素材保存在 `data/`，不会随代码提交；备份或迁移时请另行保存整个 `data/`。`work/` 内的运行时、日志、PID、`build/` 和 `node_modules/` 也不提交到 Git。
+
 ### 4.1 客户端安装
 
 | 操作系统 | GitHub                                                       |
